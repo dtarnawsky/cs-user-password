@@ -25,4 +25,10 @@ When used in combination your password manager will detect submission of a usern
 
 
 ## Working in a Web Native App
+
+When the same application is run a web view you will get different behavior with password managers:
+
+In iOS the `username` field will have an option to launch the Password Manager
+[![Username Password](./user-pass.jpeg)]
+
 - WIP
