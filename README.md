@@ -31,7 +31,7 @@ When the same application is run a web view you will get different behavior with
 Android's web view will auto-complete passwords and allow autofill of credentials. This is done with Capacitor by associating credentials with the hostname of the app which by default is `localhost`. As a caveat this means that any other Capacitor based app will also suggest credentials for the app.
 
 In iOS the `username` field will have an option to launch the Password Manager as shown below:
-[![Username Password](./user-pass.jpeg)]
+![Username Password](./cs-user-pass.png)
 
 Although your app has the correct setup for autofilling of credential there is an issue with the native web view that prevents correct functionality. This is documented in this bug: [https://bugs.webkit.org/show_bug.cgi?id=203299](https://bugs.webkit.org/show_bug.cgi?id=203299).
 
