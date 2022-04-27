@@ -9,8 +9,6 @@ import { Router } from '@angular/router';
 export class LoginPage implements OnInit {
   email: string;
   password: string;
-  errorMessage: string;
-  infoMessage: string;
   submitEnabled = true;
 
   constructor(private router: Router) { }
@@ -18,14 +16,11 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  clearMessages() {
-    this.errorMessage = '';
-    this.infoMessage = '';
-  }
+
 
   onSubmit() {
     if ((this.email.length === 0) || (this.password.length === 0)) {
-      this.errorMessage = 'Email and password must be specified.';
+      alert('Email and password must be specified.');
       return;
     }
     this.submitEnabled = false;
