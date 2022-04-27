@@ -15,6 +15,8 @@ export class LoginPage {
 
   ionViewWillEnter() {
     this.submitEnabled = true;
+    this.email = '';
+    this.password = '';
   }
 
 
