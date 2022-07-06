@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "N3B3WKDZND.io.ionic.cs.user.pass",
+        "paths": ["*"]
+      }
+    ]
+  }
+}

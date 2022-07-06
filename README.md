@@ -34,4 +34,49 @@ In iOS the `username` field will have an option to launch the Password Manager a
 ![Username Password](./cs-user-pass.png)
 
 Although your app has the correct setup for autofilling of credential there is an issue with the native web view that prevents correct functionality. This is documented in this bug: [https://bugs.webkit.org/show_bug.cgi?id=203299](https://bugs.webkit.org/show_bug.cgi?id=203299).
+https://bugs.webkit.org/show_bug.cgi?id=226023
+
+## iOS
+
+### Associate your App to a site
+Your application needs to be associated with a site and you will need to configure this in your Apple Developer Account and via XCode following these instructions:
+[https://capacitorjs.com/docs/guides/deep-links#ios-configuration](https://capacitorjs.com/docs/guides/deep-links#ios-configuration)
+
+### Save the password
+First install this plugin in your application:
+`npm install capacitor-ios-autofill-save-password`
+
+Then add the following when we submit our password:
+`import { SavePassword } from 'capacitor-ios-autofill-save-password';`
+
+```typescript
+    if (this.platform.is('ios')) {
+      setTimeout(async () => {
+        try {
+          await SavePassword.promptDialog({
+            username: this.email,
+            password: this.password
+          });
+        } catch (err) {
+          alert('Error:' + err);
+        }
+
+      }, 3000);
+    }
+```
+The additional 3 seconds is to give time after submission of your password before the password save dialog is shown.
+
+### Help with autofill
+When iOS autofills the username and password it sets the value of the input but it isnt bound correctly.
+We can grab the username via:
+`document.getElementsByName('email')[0].value`
+
+This doesnt work for passwords
+
+## Site Association
+
+https://cs-user-pass.netlify.app/.well-known/apple-app-site-association
+https://cs-user-pass.netlify.app/.well-known/assetlinks.json
+
+
 
